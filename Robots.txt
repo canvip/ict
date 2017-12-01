@@ -1,0 +1,7 @@
+User-agent:*
+
+User-agent: *
+
+Allow: /
+
+Sitemap: https://profuse-authorization.glitch.me/sitemap.xml
