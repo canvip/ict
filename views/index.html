@@ -11,16 +11,120 @@
     <amp-install-serviceworker src="sw.js"     
     layout="nodisplay">
     </amp-install-serviceworker>
-  
-    <title>News Article</title>
-    </head>
-    
-  <body>
-         
-    <header>
-     Papyrus
-    </header>
      
- <h1>Welcome to the ai Papyrus Please  <a href="/login">log in</h1>
- <p>Hello, View your <a href="/profile">profile</a>.</p>
+    <title>News Article</title>
     
+    
+  </head>
+  <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+  
+  <script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "NewsArticle",
+"mainEntityOfPage": "https://ampbyexample.com/samples_templates/news_article/",
+"headline": "Lorem Ipsum",
+"datePublished": "2016-04-21T11:55:02Z",
+"dateModified": "2016-04-21T11:55:02Z",
+"description": "A sample news article build with AMP.",
+"author": {
+  "@type": "Person",
+  "name": "Sebastian Benz"
+},
+"publisher": {
+  "@type": "Organization",
+  "name": "Google",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "http://cdn.ampproject.org/logo.jpg",
+    "width": 600,
+    "height": 60
+  }
+},
+"image": {
+  "@type": "ImageObject",
+  "url": "https://ampbyexample.com/img/landscape_lake_1280x857.jpg",
+  "height": 1280,
+  "width": 857
+}
+}
+</script>
+  
+  
+  <p class="heading">
+  <amp-social-share type="twitter"
+    width="45"
+    height="33"></amp-social-share>
+  <amp-social-share type="facebook"
+    width="45"
+    height="33"
+    data-attribution="254325784911610"></amp-social-share>
+  <amp-social-share type="gplus"
+    width="45"
+    height="33"></amp-social-share>
+  <amp-social-share type="email"
+    width="45"
+    height="33"></amp-social-share>
+  <amp-social-share type="pinterest"
+    width="45"
+    height="33"></amp-social-share>
+</p>
+  
+  <amp-carousel width="1280"
+  height="1000"
+  layout="responsive"
+  type="slides">
+  <figure>
+    <amp-img src="https://cdn.hyperdev.com/drag-in-files.svg?1477153069954"
+      width="1280"
+      height="857"
+      layout="responsive"></amp-img>
+    <figcaption>Each image has a different caption.</figcaption>
+  </figure>
+  <figure>
+    <amp-img src="https://cdn.hyperdev.com/drag-in-files.svg?1477153069954"
+      width="1280"
+      height="853"
+      layout="responsive"></amp-img>
+    <figcaption>This caption is different.</figcaption>
+  </figure>
+  <figure>
+    <amp-img src="https://cdn.hyperdev.com/drag-in-files.svg?1477153069954"
+      width="1280"
+      height="853"
+      layout="responsive"></amp-img>
+    <figcaption>The third image has its caption.</figcaption>
+  </figure>
+</amp-carousel>
+  
+  <figure>
+  <amp-iframe src="https://www.google.us/trends/embed/US_cu_82I1CVMBAACV6M_en/horserace_chart_3c6cdb21-e1eb-4412-9c28-707c3638ea35?hl=en&template=fe"
+    title="Interactive chart displaying 2016 Oscar Best Picture search interest by date"
+    height="360"
+    layout="fixed-height"
+    frameborder="0"
+    sandbox="allow-scripts allow-same-origin">
+    <amp-img src="https://cdn.hyperdev.com/drag-in-files.svg?1477153069954"
+      layout="fixed-height"
+      height="360"
+      width="auto"
+      placeholder>
+    </amp-img>
+  </amp-iframe>
+  <figcaption>An interactive chart - in AMP!</figcaption>
+</figure>
+  
+  <amp-list width="300"
+  height="75"
+  layout="responsive"
+  src="/json/related_articles.json">
+  <template type="amp-mustache">
+    <a class="card related"
+      href="{{url}}">
+      <amp-img width="101"
+        height="75"
+        src="{{thumbnail}}"></amp-img>
+      <span>{{title}}</span>
+    </a>
+  </template>
+</amp-list>

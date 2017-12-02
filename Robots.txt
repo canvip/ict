@@ -4,4 +4,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://profuse-authorization.glitch.me/sitemap.xml
+Sitemap: https://ict-2017.glitch.me/sitemap.xml
