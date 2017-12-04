@@ -10,10 +10,9 @@ var compression = require('compression');
 var mcache = require('memory-cache');
 
 app.use(compression())
-let max =600;
+let max =31557600000;
 
 //var sitemap = require('express-sitemap')();
-
 
 
 var cache = (duration) => {
@@ -34,6 +33,8 @@ var cache = (duration) => {
   }
 }
 
+
+
 app.use(express.static('views'));
 /*
 app.get('/',cache(10), function(req, res) {
@@ -50,14 +51,15 @@ app.get('/', cache(1000), (req, res) => {
 app.get("/sw.js", function (req, res) {
   res.sendFile(__dirname + '/sw.js');
 });
+app.get("/ssw.js", function (req, res) {
+  res.sendFile(__dirname + '/ssw.js');
+});
 app.get("/manifest.json", function (req, res) {
   res.sendFile(__dirname + '/manifest.json');
 });
 app.get("/Robots.txt", function (req, res) {
   res.sendFile(__dirname + '/Robots.txt');
 });
-
-
 
 app.get('/sitemap.xml', function(req, res) {
     var sitemap = generate_xml_sitemap(); // get the dynamically generated XML sitemap
