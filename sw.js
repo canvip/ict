@@ -7,14 +7,10 @@ const workbox = new WorkboxSW({
   clientsClaim: true
 });
 
-workbox.router.registerRoute(/(.*)articles(.*)\.(?:png|gif|jpg|ejs)/,
-  workbox.strategies.cacheFirst({
-    cacheName: 'images-cache',
-    cacheExpiration: {
-      maxEntries: 50
-    },
-    cacheableResponse: {statuses: [0, 200]}
-  })
+workbox.router.registerRoute(/(.*)views(.*)\.(?:png|gif|jpg|html)/,
+  workbox.strategies.networkFirst(),
+                             
+
 );
 
 self.addEventListener('push', (event) => {
@@ -28,6 +24,18 @@ workbox.precache([
   {
     "url": "https://ict-2017.glitch.me/index.html",
     "revision": "7dc612bd22a1710ad8c318480f474ea5"
+  },
+  {
+    "url": "https://cdn.glitch.com/bff8d421-515b-4f42-b9fb-e1c89f580b5d%2Fsus.jpg?1512340355803",
+    "revision": "7dcm12bd22a1710ad8c318480f474ea5"
+  },
+  {
+    "url": "https://ict-2017.glitch.me/app.js",
+    "revision": "7dccv2bd22a1710ad8c318480f474ea5"
+  },
+  {
+    "url": "https://ict-2017.glitch.me/style.css",
+    "revision": "7dccv2bd22a1710a18480f474ea5"
   }
 ]);
 

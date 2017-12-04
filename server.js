@@ -51,6 +51,9 @@ app.get('/', cache(1000), (req, res) => {
 app.get("/sw.js", function (req, res) {
   res.sendFile(__dirname + '/sw.js');
 });
+app.get("/ssw.js", function (req, res) {
+  res.sendFile(__dirname + '/ssw.js');
+});
 app.get("/manifest.json", function (req, res) {
   res.sendFile(__dirname + '/manifest.json');
 });
